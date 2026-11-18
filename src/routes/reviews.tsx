@@ -26,6 +26,7 @@ function Reviews() {
 
   const decide = (d: "Approved" | "Changes Requested") => {
     if (d === "Changes Requested" && !comment.trim()) { toast.error("Add a comment for the author first"); return; }
+    if (!r) return;
     decideReview(r.id, d, comment.trim());
     setComment("");
     toast.success(d === "Approved" ? "Stamped as Final Approved Content" : "Changes requested", { description: "Feedback logged to the Learning Loop." });

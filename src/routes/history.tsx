@@ -25,7 +25,7 @@ const icon = { approval: CheckCircle2, override: Sliders, rule: BookOpen };
 function HistoryPage() {
   const { log } = useBrand();
   const [sel, setSel] = useState(2);
-  const v = versions[sel];
+  const v = versions[sel] ?? versions[0]!;
   return (
     <div className="mx-auto max-w-7xl">
       <PageHeader title="Version History & Learning Loop" subtitle="Every revision is tracked so the same mistake is never approved twice." />
